@@ -9,21 +9,43 @@ namespace Assessment_2_Flip_Cards
 {
     class Deck
     {
-        private string FileName;
-        Card[] Cards;
 
-        public Deck(string FileName)
+        public Card[] Cards;
+        private int Order = 0;
+
+        public Deck()
         {
-            this.FileName = FileName;
             Cards = new Card[4];
         }
 
-        public string GetFileName()
+        public int PreviousCard()
         {
-            return FileName;
+            if (Order == 0)
+            {
+                Order = 0;
+            }
+            else if (Order > 0)
+            {
+                Order--;
+            }
+            return Order;
         }
 
-        public void LoadDeck(string FileName)
+        public int NextCard()
+        {
+            if (Order <= Cards.Length)
+            {
+                Order++;
+            }
+            return Order;
+        }
+
+        public Card GetCard(int i)
+        {
+            return Cards[i];
+        }
+
+            public void LoadDeck(string FileName)
         {
             string line;
             int count = 0;
@@ -38,22 +60,32 @@ namespace Assessment_2_Flip_Cards
             }
         }
 
-        public void ShuffleCard()
+        public Card ShuffleCard()
         {
             Random rnd = new Random();
             int count = 0;
+            int num = 0;
 
             for(int i = 0; i < Cards.Length; i++)
             {
-                int num = rnd.Next(4);
+                num = rnd.Next(4);
+
                 Cards[count] = Cards[num];
                 count++;
             }
+            return Cards[num];
         }
 
-        public void RandomCard()
+        public Card GetRandomCard()
         {
-            
+            Random rnd = new Random();
+
+            int Random = rnd.Next(Cards.Length);
+            for(int i = 0; i < Cards.Length; i++)
+            {
+                Random = rnd.Next(Cards.Length);
+            }
+            return Cards[Random];
+        }
         }
     }
-}

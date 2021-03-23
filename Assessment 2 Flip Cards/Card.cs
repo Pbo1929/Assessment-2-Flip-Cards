@@ -20,23 +20,50 @@ namespace Assessment_2_Flip_Cards
             Flip = false;
         }
 
+        public bool Flipcard()
+        {
+            if (Flip == false)
+            {
+                Flip = true;
+            }
+            else
+            {
+                Flip = false;
+            }
+            return Flip;
+        }
+
+        public string GetCardName()
+        {
+            return CardName;
+        }
+
+        public string GetCardDefinition()
+        {
+            return CardDefinition;
+        }
+
         public int GetCount()
         {
             return CardCount;
         }
 
-        public string Flipcard()
+        public bool IsFlipped()
         {
-            if (Flip == false)
+            return Flip;
+        }
+
+        public string GetCardText()
+        {
+            if (Flip == true)
             {
-                Flip = true;
                 return CardDefinition;
             }
             else
             {
-                Flip = false;
                 return CardName;
             }
         }
     }
 }
+
