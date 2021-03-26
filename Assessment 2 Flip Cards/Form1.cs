@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace Assessment_2_Flip_Cards
 {
     public partial class Form1 : Form
@@ -17,6 +18,7 @@ namespace Assessment_2_Flip_Cards
         int Order = 0;
         int Value = 0;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private int TotalSeconds;
 
         public Form1()
         {
@@ -30,6 +32,7 @@ namespace Assessment_2_Flip_Cards
         /// <param name="e"></param>
         private void previousButton_Click(object sender, EventArgs e)
         {
+
             if (Order == 0)
             {
                 Card myCard = deck.GetCard(0);
@@ -117,6 +120,14 @@ namespace Assessment_2_Flip_Cards
         /// <param name="e"></param>
         private void browseButton_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < 60; i++)
+            {
+                this.comboBox2.Items.Add(i.ToString());
+                this.comboBox3.Items.Add(i.ToString());
+            }
+            this.comboBox2.SelectedIndex = 59;
+            this.comboBox3.SelectedIndex = 59;
+
             openFileDialog1.ShowDialog();
             string FileName = openFileDialog1.FileName;
             StreamReader FileReader = new StreamReader(FileName);
@@ -141,7 +152,59 @@ namespace Assessment_2_Flip_Cards
 
         private void darkMode_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.BackColor = Color.Black;
+
+        }
+        /// <summary>
+        /// For the timer - when start is pressed, it cannot be pressed again. The minutes and seconds are converted to string so they can be
+        /// displayed. A variable called TotalSeconds is created in order to calculate the total seconds, used for later.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void startbutton_Click(object sender, EventArgs e)
+        {
+            this.startbutton.Enabled = false;
+            this.stopbutton.Enabled = true;
+
+            int minutes = int.Parse(this.comboBox2.SelectedItem.ToString());
+            int seconds = int.Parse(this.comboBox2.SelectedItem.ToString());
+
+            TotalSeconds = (minutes * 60) + seconds;
+
+            this.timer2.Enabled = true;
+        }
+        /// <summary>
+        /// Works exactly like the start button but has the opposite role. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void stopbutton_Click(object sender, EventArgs e)
+        {
+            this.stopbutton.Enabled = false;
+            this.startbutton.Enabled = true;
+
+            TotalSeconds = 0;
+            this.timer2.Enabled = false;
+        }
+        /// <summary>
+        /// This is used to display the minutes and seconds as a text and finding out whether time is up or not. If it is, "Time's up!" is displayed,
+        /// showing that the time is up.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if(TotalSeconds > 0)
+            {
+                TotalSeconds--;
+                int minutes = TotalSeconds / 60;
+                int seconds = TotalSeconds - (minutes * 60);
+                this.label4.Text = minutes.ToString() + ":" + seconds.ToString();
+            }
+            else
+            {
+                this.timer2.Stop();
+                MessageBox.Show("Time's Up!");
+            }
         }
     }
 }

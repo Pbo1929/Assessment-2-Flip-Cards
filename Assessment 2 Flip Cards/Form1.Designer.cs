@@ -42,9 +42,14 @@ namespace Assessment_2_Flip_Cards
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.darkMode = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.startbutton = new System.Windows.Forms.Button();
+            this.stopbutton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -173,13 +178,67 @@ namespace Assessment_2_Flip_Cards
             this.darkMode.Text = "Dark Mode";
             this.darkMode.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // comboBox2
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-19, -9);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(904, 494);
-            this.flowLayoutPanel1.TabIndex = 14;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(670, 144);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(75, 24);
+            this.comboBox2.TabIndex = 14;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(751, 144);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(75, 24);
+            this.comboBox3.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.Location = new System.Drawing.Point(727, 176);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 25);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "N/A";
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // startbutton
+            // 
+            this.startbutton.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.startbutton.Location = new System.Drawing.Point(670, 209);
+            this.startbutton.Name = "startbutton";
+            this.startbutton.Size = new System.Drawing.Size(75, 23);
+            this.startbutton.TabIndex = 18;
+            this.startbutton.Text = "START";
+            this.startbutton.UseVisualStyleBackColor = false;
+            this.startbutton.Click += new System.EventHandler(this.startbutton_Click);
+            // 
+            // stopbutton
+            // 
+            this.stopbutton.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.stopbutton.Location = new System.Drawing.Point(751, 209);
+            this.stopbutton.Name = "stopbutton";
+            this.stopbutton.Size = new System.Drawing.Size(75, 23);
+            this.stopbutton.TabIndex = 19;
+            this.stopbutton.Text = "STOP";
+            this.stopbutton.UseVisualStyleBackColor = false;
+            this.stopbutton.Click += new System.EventHandler(this.stopbutton_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.Location = new System.Drawing.Point(713, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 25);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "TIMER";
             // 
             // Form1
             // 
@@ -187,6 +246,12 @@ namespace Assessment_2_Flip_Cards
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(835, 462);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.stopbutton);
+            this.Controls.Add(this.startbutton);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.darkMode);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label3);
@@ -200,7 +265,6 @@ namespace Assessment_2_Flip_Cards
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -222,9 +286,15 @@ namespace Assessment_2_Flip_Cards
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button darkMode;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label timer;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button startbutton;
+        private System.Windows.Forms.Button stopbutton;
+        private System.Windows.Forms.Label label5;
     }
 }
 
