@@ -19,11 +19,20 @@ namespace Assessment_2_Flip_Cards
         int Value = 0;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private int TotalSeconds;
-
+        /// <summary>
+        /// All buttons are disabled until they actually get a file so it won't keep crashing if they forget to get a file.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.startbutton.Enabled = false;
+            this.stopbutton.Enabled = false;
+            this.previousButton.Enabled = false;
+            this.nextButton.Enabled = false;
+            this.flipButton.Enabled = false;
+            this.shuffleButton.Enabled = false;
+            this.randomButton.Enabled = false;
         }
         /// <summary>
         /// Used to get the previous card. Limits so it can't go less than 0.
@@ -120,6 +129,13 @@ namespace Assessment_2_Flip_Cards
         /// <param name="e"></param>
         private void browseButton_Click(object sender, EventArgs e)
         {
+            this.startbutton.Enabled = true;
+            this.stopbutton.Enabled = true;
+            this.previousButton.Enabled = true;
+            this.nextButton.Enabled = true;
+            this.flipButton.Enabled = true;
+            this.shuffleButton.Enabled = true;
+            this.randomButton.Enabled = true;
             for (int i = 0; i < 60; i++)
             {
                 this.comboBox2.Items.Add(i.ToString());
