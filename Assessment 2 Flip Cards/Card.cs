@@ -10,16 +10,23 @@ namespace Assessment_2_Flip_Cards
     {
         private string CardName;
         private string CardDefinition;
-        private int CardCount;
         private bool Flip;
-
+        private int CardCount;
+        /// <summary>
+        /// Constructor for Card containing its front and back side.
+        /// </summary>
+        /// <param name="CardName"></param>
+        /// <param name="CardDefinition"></param>
         public Card(string CardName, string CardDefinition)
         {
             this.CardName = CardName;
             this.CardDefinition = CardDefinition;
             Flip = false;
         }
-
+        /// <summary>
+        /// Flips the card.
+        /// </summary>
+        /// <returns></returns>
         public bool Flipcard()
         {
             if (Flip == false)
@@ -52,7 +59,10 @@ namespace Assessment_2_Flip_Cards
         {
             return Flip;
         }
-
+        /// <summary>
+        /// Returns its name or definition depending on its current status ( true or false ).
+        /// </summary>
+        /// <returns></returns>
         public string GetCardText()
         {
             if (Flip == true)
