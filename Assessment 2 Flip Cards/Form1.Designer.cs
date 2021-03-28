@@ -50,6 +50,7 @@ namespace Assessment_2_Flip_Cards
             this.startbutton = new System.Windows.Forms.Button();
             this.stopbutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.lightMode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -240,12 +241,23 @@ namespace Assessment_2_Flip_Cards
             this.label5.TabIndex = 20;
             this.label5.Text = "TIMER";
             // 
+            // lightMode
+            // 
+            this.lightMode.Location = new System.Drawing.Point(6, 37);
+            this.lightMode.Name = "lightMode";
+            this.lightMode.Size = new System.Drawing.Size(86, 24);
+            this.lightMode.TabIndex = 21;
+            this.lightMode.Text = "Light Mode";
+            this.lightMode.UseVisualStyleBackColor = true;
+            this.lightMode.Click += new System.EventHandler(this.lightMode_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(835, 462);
+            this.Controls.Add(this.lightMode);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.stopbutton);
             this.Controls.Add(this.startbutton);
@@ -295,6 +307,7 @@ namespace Assessment_2_Flip_Cards
         private System.Windows.Forms.Button startbutton;
         private System.Windows.Forms.Button stopbutton;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button lightMode;
     }
 }
 

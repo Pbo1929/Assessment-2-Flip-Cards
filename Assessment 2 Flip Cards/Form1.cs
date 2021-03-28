@@ -168,7 +168,42 @@ namespace Assessment_2_Flip_Cards
 
         private void darkMode_Click(object sender, EventArgs e)
         {
+            this.BackColor = Color.Black;
 
+            browseButton.ForeColor = Color.White;
+            darkMode.ForeColor = Color.White;
+            lightMode.ForeColor = Color.White;
+            textDisplay.ForeColor = Color.White;
+            label5.ForeColor = Color.White;
+            label3.ForeColor = Color.White;
+            label4.ForeColor = Color.White;
+            previousButton.ForeColor = Color.White;
+            flipButton.ForeColor = Color.White;
+            nextButton.ForeColor = Color.White;
+            shuffleButton.ForeColor = Color.White;
+            randomButton.ForeColor = Color.White;
+            startbutton.ForeColor = Color.White;
+            stopbutton.ForeColor = Color.White;
+        }
+
+        private void lightMode_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
+
+            browseButton.ForeColor = Color.Black;
+            darkMode.ForeColor = Color.Black;
+            lightMode.ForeColor = Color.Black;
+            textDisplay.ForeColor = Color.Black;
+            label5.ForeColor = Color.Black;
+            label3.ForeColor = Color.Black;
+            label4.ForeColor = Color.Black;
+            previousButton.ForeColor = Color.Black;
+            flipButton.ForeColor = Color.Black;
+            nextButton.ForeColor = Color.Black;
+            shuffleButton.ForeColor = Color.Black;
+            randomButton.ForeColor = Color.Black;
+            startbutton.ForeColor = Color.Black;
+            stopbutton.ForeColor = Color.Black;
         }
         /// <summary>
         /// For the timer - when start is pressed, it cannot be pressed again. The minutes and seconds are converted to string so they can be
