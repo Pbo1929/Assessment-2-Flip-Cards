@@ -34,6 +34,7 @@ namespace Assessment_2_Flip_Cards
             this.flipButton.Enabled = false;
             this.shuffleButton.Enabled = false;
             this.randomButton.Enabled = false;
+            progressBar1.Value = 0;
         }
         /// <summary>
         /// Used to get the previous card. Limits so it can't go less than 0.
@@ -42,7 +43,6 @@ namespace Assessment_2_Flip_Cards
         /// <param name="e"></param>
         private void previousButton_Click(object sender, EventArgs e)
         {
-
             if (Order == 0)
             {
                 Card myCard = deck.GetCard(0);
@@ -70,6 +70,12 @@ namespace Assessment_2_Flip_Cards
         /// <param name="e"></param>
         private void nextButton_Click(object sender, EventArgs e)
         {
+            progressBar1.Value = progressBar1.Value + 100 / deck.Cards.Length;
+            if(progressBar1.Value == 100)
+            {
+                progressBar1.Value = 0;
+            }
+
             Order++;
             if (Order == deck.Cards.Length)
             {
