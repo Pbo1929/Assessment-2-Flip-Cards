@@ -51,6 +51,8 @@ namespace Assessment_2_Flip_Cards
             this.stopbutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lightMode = new System.Windows.Forms.Button();
+            this.Time = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // comboBox1
@@ -251,12 +253,26 @@ namespace Assessment_2_Flip_Cards
             this.lightMode.UseVisualStyleBackColor = true;
             this.lightMode.Click += new System.EventHandler(this.lightMode_Click);
             // 
+            // Time
+            // 
+            this.Time.AutoSize = true;
+            this.Time.Location = new System.Drawing.Point(339, 47);
+            this.Time.Name = "Time";
+            this.Time.Size = new System.Drawing.Size(39, 17);
+            this.Time.TabIndex = 22;
+            this.Time.Text = "Time";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(835, 462);
+            this.Controls.Add(this.Time);
             this.Controls.Add(this.lightMode);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.stopbutton);
@@ -308,6 +324,8 @@ namespace Assessment_2_Flip_Cards
         private System.Windows.Forms.Button stopbutton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button lightMode;
+        private System.Windows.Forms.Label Time;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -25,6 +25,7 @@ namespace Assessment_2_Flip_Cards
         public Form1()
         {
             InitializeComponent();
+            timer1.Start();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.startbutton.Enabled = false;
             this.stopbutton.Enabled = false;
@@ -256,6 +257,17 @@ namespace Assessment_2_Flip_Cards
                 this.timer2.Stop();
                 MessageBox.Show("Time's Up!");
             }
+        }
+        /// <summary>
+        /// Shows the current date and time.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime datetime = DateTime.Now;
+
+            this.Time.Text = datetime.ToString();
         }
     }
 }
