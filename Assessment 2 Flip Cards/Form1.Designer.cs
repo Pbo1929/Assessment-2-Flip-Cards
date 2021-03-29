@@ -53,6 +53,7 @@ namespace Assessment_2_Flip_Cards
             this.lightMode = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.selectafiletext = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -266,12 +267,23 @@ namespace Assessment_2_Flip_Cards
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // selectafiletext
+            // 
+            this.selectafiletext.AutoSize = true;
+            this.selectafiletext.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.selectafiletext.Location = new System.Drawing.Point(350, 217);
+            this.selectafiletext.Name = "selectafiletext";
+            this.selectafiletext.Size = new System.Drawing.Size(125, 13);
+            this.selectafiletext.TabIndex = 23;
+            this.selectafiletext.Text = "PLEASE SELECT A FILE";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(835, 462);
+            this.Controls.Add(this.selectafiletext);
             this.Controls.Add(this.Time);
             this.Controls.Add(this.lightMode);
             this.Controls.Add(this.label5);
@@ -326,6 +338,7 @@ namespace Assessment_2_Flip_Cards
         private System.Windows.Forms.Button lightMode;
         private System.Windows.Forms.Label Time;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label selectafiletext;
     }
 }
 

@@ -1,0 +1,4 @@
+Dog, 4 legs.
+Cat, 4 legs.
+Kangaroo, 2 legs.
+Snake, 0 legs.

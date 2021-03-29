@@ -136,6 +136,8 @@ namespace Assessment_2_Flip_Cards
         /// <param name="e"></param>
         private void browseButton_Click(object sender, EventArgs e)
         {
+            selectafiletext.Text = "";
+            
             this.startbutton.Enabled = true;
             this.stopbutton.Enabled = true;
             this.previousButton.Enabled = true;
